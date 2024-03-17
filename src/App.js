@@ -69,12 +69,15 @@ function App() {
               </div>}
               
           </div>}
-          <div className='card-container'>
+          <div className='card-box'>
             {
               (data && data?.length !== 0) ?
-              data.map((item) => (
+              <div className='card-container'>
+                {data.map((item) => (
                 <EmployeeCard key={item.id} item={item} handleSingleDelete={handleSingleDelete} multiSelect={multiSelect} selectedItems={selectedItems} setSelectedItems={setSelectedItems} />
-              )) :
+              ))}
+              </div>
+               :
               (<div className='data-fetch'><p>Click on Fetch Employee to fetch Employees data</p></div>)
             }
           </div>

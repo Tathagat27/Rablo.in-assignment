@@ -121,11 +121,19 @@
 }
 
 .card-container{
-  display: flex;
-  flex-wrap: wrap;
+  width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
   gap: 15px 0;
+  justify-items: center;
   justify-content: space-around;
   padding: 10px;
+}
+
+.card-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .multi-select{
@@ -137,6 +145,7 @@
   color: #d9f0f5;
   font-weight: 500;
   font-size: 30px;    
+  padding: 10px;
   text-shadow: 1px 1px 1px #082b34;
 }
 
@@ -263,4 +272,64 @@
   border-radius: 0 0 20px 20px;
   background: linear-gradient(70deg, rgba(229, 227, 227, 0.178) 0%, rgba(213, 213, 213, 0) 100%);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Your styles for medium-sized devices here */
+
+  .card-container{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns by default */
+    gap: 15px 0;
+    justify-items: center;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .card{
+    height: 45vh;
+    width: 40vw;  
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 5vh 0;
+    background: linear-gradient(70deg, rgba(229, 227, 227, 0.178) 0%, rgba(213, 213, 213, 0) 100%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  /* Your styles for small devices here */
+
+  .card-container{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 3 columns by default */
+    gap: 15px 0;
+    justify-items: center;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .card{
+    height: 45vh;
+    width: 75vw;  
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 5vh 0;
+    background: linear-gradient(70deg, rgba(229, 227, 227, 0.178) 0%, rgba(213, 213, 213, 0) 100%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+
+  .dashboard-top{
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+  }
 }
